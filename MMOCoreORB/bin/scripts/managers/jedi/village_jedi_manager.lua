@@ -135,6 +135,7 @@ function VillageJediManager:canSurrenderSkill(pPlayer, skillName)
 	end
 
 	if string.find(skillName, "force_discipline_") and CreatureObject(pPlayer):hasSkill("force_title_jedi_rank_03") and not CreatureObject(pPlayer):villageKnightPrereqsMet(skillName) then
+		CreatureObject(pPlayer):sendSystemMessage("@jedi_spam:cant_revoke_prompt")
 		return false
 	end
 
